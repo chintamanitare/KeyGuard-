@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyGuard - Your Personal Password-Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Google Fonts for typography enhancement -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>/* Buttons */
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            margin: 0 5px;
+            font-size: 0.9em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #2a0d0d;
+            color: #ffffff;
+        }
+        
+        button i {
+            font-size: 1em;
+        }
+        
+        .copy-btn {
+            color: #4CAF50;
+            background-color: #e8f5e9;
+        }
+        
+        .copy-btn:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .delete-btn {
+            color: #f44336;
+            background-color: #ffebee;
+        }
+        
+        .delete-btn:hover {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .toggle-visibility-btn {
+            color: #FF9800;
+            background-color: #fff3e0;
+        }
+        
+        .toggle-visibility-btn:hover {
+            background-color: #FF9800;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            button {
+                margin: 5px 0;
+                width: 100%;
+            }
+        }
+        </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">KeyGuard</div>
+        
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Password Manager</h1>
+            <p>We're thrilled to have you here. Your digital life contains a myriad of passwords, and we know how challenging it can be to manage them all. That's why we're here to make it easy for you.</p>
+        </header>
+        <section class="passwords">
+            <h2>Your Passwords <span id="alert">(Copied!)</span></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Placeholder content for passwords -->
+                    <tr>
+                        
+                        <td>user123</td>
+                        <td><input type="password" value="password123" class="password-field" readonly></td>
+                        <td>
+                            <button class="toggle-visibility-btn">Show</button>
+                            <button class="copy-btn">Copy</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="add-password">
+            <h2>Add a Password</h2>
+            <form action="/submit" method="post">
+                <label for="website">Website:</label>
+                <input type="text" id="website" name="website" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>Created by Chintamani Tare &copy; 2024</p>
+            <p>Visit <a href="https://www.linkedin.com/in/chintamani-tare-7ba817251/" target="_blank">Chintamani Tare</a> for more information.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
